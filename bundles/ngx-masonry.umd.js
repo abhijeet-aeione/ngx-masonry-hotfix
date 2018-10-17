@@ -96,7 +96,9 @@ var NgxMasonryComponent = (function () {
                 if (isFirstItem)
                     _this.layout();
             });
-            this._element.nativeElement.removeChild(element);
+            if (this._element.nativeElement.contains(element)) {
+                this._element.nativeElement.removeChild(element);
+            }
         }
         else {
             // Tell Masonry that a child element has been added
